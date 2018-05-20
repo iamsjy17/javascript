@@ -30,3 +30,8 @@ Student.prototype.setClass = function(_calss){
 };
 
 var song = new Student("song", 3);
+
+console.log(song.getName());
+console.log(song.getClass());
+console.log(song instanceof Person); // true 
+console.log(song instanceof Student); // true
