@@ -32,7 +32,7 @@ function extend(obj, prop){
     return obj;
 }
 
-var added = {
+var studentAdded = {
     setAge : function(age){
         this.age = age;
     },
@@ -41,6 +41,27 @@ var added = {
     }
 };
 
-extend(student, added);
+extend(student, studentAdded);
 student.setAge(25);
 console.log(student.getAge());
+
+
+//한 단계 더 상속을 구현해보도록 하겠다.
+//student를 상속받은 HiSchoolStudent를 구현하겠다.
+
+var hiSchoolStudent = create_object(student);
+
+var hiSchoolStudentAdded = {
+    grade : 3,
+    setGrade : function(grade){
+        this.grade = grade;
+    },
+    getGrade : function(){
+        return this.grade;
+    }
+};
+
+extend(hiSchoolStudent, hiSchoolStudentAdded);
+console.log(hiSchoolStudent.getName());
+console.log(hiSchoolStudent.getAge());
+console.log(hiSchoolStudent.getGrade());
